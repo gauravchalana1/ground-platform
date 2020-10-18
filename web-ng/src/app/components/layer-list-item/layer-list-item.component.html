@@ -24,10 +24,6 @@ limitations under the License.
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #layerMenu="matMenu">
-    <button mat-menu-item (click)="onDeleteFeature()">
-      <mat-icon>delete_forever</mat-icon>
-      <span>Delete</span>
-    </button>
     <button mat-menu-item (click)="onCustomizeLayer()">
       <mat-icon>edit</mat-icon>
       <span>Customize layer</span>
@@ -39,6 +35,10 @@ limitations under the License.
     <button mat-menu-item aria-label="back" (click)="onGoBackClick()">
       <mat-icon>close</mat-icon>
       <span>Close</span>
+    </button>
+    <button mat-menu-item (click)="onDeleteFeature()">
+      <mat-icon>delete_forever</mat-icon>
+      <span>Delete</span>
     </button>
   </mat-menu>
 </mat-list-item>

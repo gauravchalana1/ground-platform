@@ -39,6 +39,7 @@ export class FeaturePanelComponent {
   readonly lang: string;
   readonly fieldTypes = FieldType;
   readonly layerListItemActionsType = LayerListItemActionsType;
+  readonly fields: any;
 
   constructor(
     private navigationService: NavigationService,
@@ -70,6 +71,14 @@ export class FeaturePanelComponent {
             .pipe(map(feature => project.layers.get(feature.layerId)!))
         )
       );
+    this.observations$.subscribe(resp => {
+      resp.forEach(c => {
+        c.form.fields.forEach(d => {
+          d[0].label;
+        });
+      });
+      console.log('checking resp val', JSON.stringify(resp));
+    });
   }
 
   onEditObservationClick(observation: Observation) {
